@@ -1,0 +1,437 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, aside, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	font-size: 62.5%;
+	font: inherit;
+	vertical-align: baseline;
+  text-decoration: none;
+}
+
+
+*{
+    box-sizing: border-box;
+    /* border: dotted grey 1px; */
+} 
+
+/*========== Font and typography ==========*/
+:root {
+--body-font: 'Poppins', sans-serif;
+--big-font-size: 2rem;
+--h1-font-size: 1.5rem;
+--h2-font-size: 1.25rem;
+--h3-font-size: 1.125rem;
+--normal-font-size: 0.935rem;
+--small-font-size: .813rem;
+--smaller-font-size: .75rem;
+/*========== Font weight ==========*/
+--font-medium: 500;
+--font-semi-bold: 600;
+/*========== Margenes Bottom ==========*/
+--mb-0-25: .25rem;
+--mb-0-5: .5rem;
+--mb-0-75: .75rem;
+--mb-1: 1rem;
+--mb-1-5: 1.5rem;
+--mb-2: 2rem;
+--mb-2-5: 2.5rem;
+--mb-3: 3rem;
+/*========== z index ==========*/
+--z-tooltip: 10;
+--z-fixed: 100;
+--z-modal: 1000;
+}
+
+@media screen and (min-width: 968px) {
+:root {
+  --big-font-size: 3rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+}
+}
+
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  padding-left: 1rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+}
+
+.section__title, .section__subtitle {
+  text-align: center;
+}
+    
+/* HTML5 display-role reset for older browsers */
+
+/* Nav css */
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+}
+
+a:hover{
+  color: orange;
+}
+
+header{
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1500px;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+}
+.navbar a{
+  font-size: 1.2rem;
+}
+
+.navbar .toggle_btn{
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/*dropdown menu in header*/
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  height: 0;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+  height: 170px;
+}
+
+.dropdown_menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Response design for header */
+@media(max-width:992px){
+  .navbar .links{
+    display: none;
+  }
+  .navbar .toggle_btn{
+    display: block;
+  }
+
+  .dropdown_menu{
+    display: block;
+  } 
+
+}
+
+@media(max-width:576px){
+ .dropdown_menu{
+  left: 2rem;
+  width: unset;
+ }
+
+}
+
+@media(max-width:992px){
+  .navbar .links{
+    display: none;
+  }
+  .navbar .toggle_btn{
+    display: block;
+  }
+
+  .dropdown_menu{
+    display: block;    
+  } 
+ 
+
+}
+
+
+/* welcome css */
+
+.grid{
+  display: flex;
+  flex-direction: row;
+}
+
+.col-2-3{
+  flex-grow: 2;
+  margin: auto;
+}
+.col-1-3{
+  flex-grow: 1;
+}
+
+#welcome{
+  padding: 0;
+}
+#welcome img{
+  display: flex;
+  padding-top: 1%;
+  width: 30vw;
+  height: auto;
+  align-self: flex-end;
+}
+
+#welcome h1{
+  font-family: 'Lato', sans-serif; font-size: var(--big-font-size); font-weight: 300; line-height: 58px;
+  text-align: center;
+  color: white;
+}
+
+#welcome p{
+  font-family: 'Lato', sans-serif; font-size: var(--small-font-size); font-weight: 300;
+  text-align: center;
+  color: white;
+}
+
+#welcome h1, #welcome p{
+  text-align: center;
+
+
+}
+
+
+
+body{
+  background-color: rgba(89, 157, 217, 0.6);
+}
+
+#welcome{
+  background-color: rgba(20, 19, 19, 0.4);
+}
+
+
+
+
+/* qualification css */
+.qualification__tabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2);
+}
+
+.qualification__button {
+font-size: var(--h3-font-size);
+font-weight: var(--font-medium);
+cursor: pointer;
+}
+
+.qualification__button:hover {
+color: var(--first-color);
+}
+
+.qualification__icon {
+font-size: 1.8rem;
+margin-right: var(--mb-0-25);
+}
+
+.qualification__data {
+display: grid;
+grid-template-columns: 1fr max-content 1fr;
+column-gap: 1.5rem;
+}
+
+.qualification__title {
+font-size: var(--normal-font-size);
+font-weight: var(--font-medium);
+}
+
+.qualification__subtitle {
+display: inline-block;
+font-size: var(--small-font-size);
+margin-bottom: var(--mb-1);
+}
+
+.qualification__calendar {
+font-size: var(--smaller-font-size);
+color: white;
+}
+
+.qualification__rounder {
+display: inline-block;
+width: 13px;
+height: 13px;
+background-color: white;
+border-radius: 50%;
+}
+
+.qualification__line {
+display: block;
+width: 1px;
+height: 100%;
+background-color: white;
+transform: translate(6px, -7px);
+}
+
+.qualification [data-content] {
+display: none;
+}
+
+.qualification__active[data-content] {
+display: block;
+}
+
+.qualification__button.qualification__active {
+color: white
+}
+
+h2.section__title{
+  text-align: center;
+  color: white;
+}
+
+.qualification{
+  background-color:  #042940;
+  text-align: center;
+}
+
+#experience div{
+  color: white;
+}
+
+div.qualification__container.container{
+  margin: auto;
+  padding-left: 1rem;
+}
+
+/*qualification css end */
+
+/* About Me Css */
+
+#about_me{
+  text-align: center;
+  height: 20vh; 
+  display: flex;
+}
+
+#about_me p{
+  margin:auto;
+  text-align: center;
+  font-size: var(--h3-font-size);
+  padding: 0 1rem;
+  /* border: solid black 1px; */
+}
+
+/* About Me Css End */
+
+/* Projects Css start from w3 */
+
+.flip-card {
+  background-color: transparent;
+  width: 33%;
+  aspect-ratio: 1/1;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Addtional CSS for cards */
+
+#projects{
+  display: flex;
+  padding: 1vw;
+  margin: auto;
+  gap: 1rem;
+}
+
+#projects img{
+  object-fit: cover;
+}

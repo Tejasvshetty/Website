@@ -1,0 +1,287 @@
+
+/* qualification css */
+.qualification__tabs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2);
+  }
+  
+.qualification__button {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.qualification__button:hover {
+  color: var(--first-color);
+}
+
+.qualification__icon {
+  font-size: 1.8rem;
+  margin-right: var(--mb-0-25);
+}
+
+.qualification__data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.qualification__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.qualification__subtitle {
+  display: inline-block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.qualification__calendar {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.qualification__rounder {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+.qualification__line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  transform: translate(6px, -7px);
+}
+
+.qualification [data-content] {
+  display: none;
+}
+
+.qualification__active[data-content] {
+  display: block;
+}
+
+.qualification__button.qualification__active {
+  color: var(--first-color);
+}
+
+
+
+
+/*qualification css end */
+
+
+
+/*=============== ACCORDION ===============*/
+.accordion {
+    display: grid;
+    align-content: center;
+  }
+  
+  .accordion__container {
+    display: grid;
+    row-gap: .75rem;
+    padding: 2rem 1rem;
+    background-color: var(--container-color);
+    border-radius: .5rem;
+    box-shadow: 0 12px 32px rgba(51, 51, 51, 0.1);
+  }
+  
+  .accordion__title {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: 400;
+    margin-top: .15rem;
+    transition: .2s;
+  }
+  
+  .accordion__header {
+    display: flex;
+    column-gap: .5rem;
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+    cursor: pointer;
+  }
+  
+  .accordion__description {
+    padding: 0 1.25rem 1.25rem 3rem;
+    font-size: var(--smaller-font-size);
+  }
+  
+  .accordion__icon {
+    font-size: 1.5rem;
+    height: max-content;
+    color: var(--title-color);
+    transition: .3s;
+  }
+  
+  .accordion__item {
+    box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
+    background-color: var(--container-color);
+    border-radius: .25rem;
+    position: relative;
+    transition: all .25s ease;
+  }
+  
+  .accordion__item::after {
+    content: '';
+    background-color: var(--first-color);
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: .25rem 0 0 .25rem;
+  }
+  
+  .accordion__item:nth-child(2) {
+    background-color: #fff7f0;
+  }
+  
+  .accordion__item:nth-child(2)::after {
+    background-color: #ffc08a;
+  }
+  
+  .accordion__item:nth-child(3) {
+    background-color: #f0f0ff;
+  }
+  
+  .accordion__item:nth-child(3)::after {
+    background-color: #8a8aff;
+  }
+  
+  .accordion__item:nth-child(4) {
+    background-color: #fff0f3;
+  }
+  
+  .accordion__item:nth-child(4)::after {
+    background-color: #ff8aa1;
+  }
+  
+  .accordion__item:nth-child(5) {
+    background-color: #f0faff;
+  }
+  
+  .accordion__item:nth-child(5)::after {
+    background-color: #8ad8ff;
+  }
+  
+  .accordion__content {
+    overflow: hidden;
+    height: 0;
+    transition: all .25s ease;
+  }
+  
+  /*Rotate icon and add font weight to titles*/
+  .accordion-open .accordion__icon {
+    transform: rotate(45deg);
+  }
+  
+  .accordion-open .accordion__title {
+    font-weight: 600;
+  }
+  
+  /*=============== MEDIA QUERIES for accordian ===============*/
+  /* For medium devices */
+  @media screen and (min-width: 576px) {
+    .accordion__container {
+      width: 550px;
+      padding: 2.5rem;
+      justify-self: center;
+      border-radius: .75rem;
+    }
+    .accordion__header {
+      padding: 1.5rem;
+    }
+    .accordion__title {
+      padding-right: 3.5rem;
+    }
+    .accordion__description {
+      padding: 0 4rem 1.25rem 3.5rem;
+    }
+  }
+  
+  /* For large devices */
+  @media screen and (min-width: 968px) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+/* Accordian about me end */
+
+/* Contact Me */
+form {
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+   
+   input, textarea {
+      border:0; outline:0;
+      padding: 1em;
+      @include border-radius(8px);
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+      font-family: 'Merriweather', sans-serif;
+      @include box-shadow(0 1px 1px rgba(black, 0.1));
+      resize: none;
+     
+     &:focus {
+        @include box-shadow(0 0px 2px rgba(red, 1)!important);
+     }
+   }
+   
+   #input-submit {
+      color: white; 
+      background: red;
+      cursor: pointer;
+     
+     &:hover {
+        @include box-shadow(0 1px 1px 1px rgba(#aaa, 0.6)); 
+     }
+   }
+   
+   textarea {
+       height: 126px;
+   }
+ }
+ 
+ 
+ .half {
+   float: left;
+   width: 48%;
+   margin-bottom: 1em;
+ }
+ 
+ .right { width: 50%; }
+ 
+ .left {
+      margin-right: 2%; 
+ }
+ 
+ 
+ @media (max-width: 480px) {
+   .half {
+      width: 100%; 
+      float: none;
+      margin-bottom: 0; 
+   }
+ }
+ 
+ 
+ /* Clearfix */
+ .cf:before,
+ .cf:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+ }
+ 
+ .cf:after {
+     clear: both;
+ }
