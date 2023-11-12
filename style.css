@@ -101,7 +101,7 @@ li{
 a{
   text-decoration: none;
   font-size: 1rem;
-  color: black;
+  color: white;
 }
 
 a:hover{
@@ -255,11 +255,11 @@ header{
 
 
 body{
-  background-color: rgba(83, 87, 166);
+  background-color: #2D5873;
 }
 
 #welcome{
-  background-color: rgba(20, 19, 19, 0.4);
+  background-color: rgba(20, 19, 19, 0.6);
 }
 
 
@@ -371,6 +371,7 @@ div.qualification__container.container{
   text-align: center;
   font-size: var(--h3-font-size);
   padding: 0 1rem;
+  color: white;
   /* border: solid black 1px; */
 }
 
